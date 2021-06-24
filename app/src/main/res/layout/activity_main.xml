@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/start_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/start_background"
+        android:adjustViewBounds="true"
+        android:clickable="true"/>
+
+    <LinearLayout
+        android:id="@+id/game_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="3.49"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.59">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="12.13"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7.39"
+                android:fontFamily="@font/gyeonggi_font"
+                android:text="경과 시간 :"
+                android:textColor="#000000"
+                android:autoSizeTextType="uniform"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.36"/>
+
+            <TextView
+                android:id="@+id/time_text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4.57"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/gyeonggi_font"
+                android:text="00:00"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.98"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1.50"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="26.59">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.46"/>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="26.51">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/puzzle_background"
+                    android:padding="2px">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:id="@+id/image01"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/image01"/>
+
+                        <TextView
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"/>
+
+                        <ImageView
+                            android:id="@+id/image02"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/image02"/>
+
+                        <TextView
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"/>
+
+                        <ImageView
+                            android:id="@+id/image03"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/image03"/>
+
+                        <TextView
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"/>
+
+                        <ImageView
+                            android:id="@+id/image04"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/image04"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:id="@+id/image05"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/image05"/>
+
+                        <TextView
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"/>
+
+                        <ImageView
+                            android:id="@+id/image06"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/image06"/>
+
+                        <TextView
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"/>
+
+                        <ImageView
+                            android:id="@+id/image07"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/image07"/>
+
+                        <TextView
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"/>
+
+                        <ImageView
+                            android:id="@+id/image08"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/image08"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:id="@+id/image09"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/image09"/>
+
+                        <TextView
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"/>
+
+                        <ImageView
+                            android:id="@+id/image10"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/image10"/>
+
+                        <TextView
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"/>
+
+                        <ImageView
+                            android:id="@+id/image11"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/image11"/>
+
+                        <TextView
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"/>
+
+                        <ImageView
+                            android:id="@+id/image12"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/image12"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:id="@+id/image13"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/image13"/>
+
+                        <TextView
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"/>
+
+                        <ImageView
+                            android:id="@+id/image14"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/image14"/>
+
+                        <TextView
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"/>
+
+                        <ImageView
+                            android:id="@+id/image15"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/image15"/>
+
+                        <TextView
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"/>
+
+                        <ImageView
+                            android:id="@+id/image16"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/image16"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/originImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="invisible"
+                    android:src="@drawable/origin"
+                    android:clickable="true"
+                    android:adjustViewBounds="true"/>
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.46"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1.89"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10.10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.46"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="9.01"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.73"
+                    android:text="▼ 크게 보기 ▼"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:autoSizeMinTextSize="1dp"
+                    android:fontFamily="@font/gyeonggi_font"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.35"/>
+
+                <ImageView
+                    android:id="@+id/lookImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="9.01"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/origin"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="17.96">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6.73"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4.50"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="4.11"/>
+
+                    <LinearLayout
+                        android:id="@+id/pause_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.88"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.40"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1.08"
+                            android:text="pause"
+                            android:fontFamily="@font/gyeonggi_font"
+                            android:textColor="@color/black"
+                            android:autoSizeTextType="uniform"
+                            android:autoSizeMinTextSize="1dp"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.40"/>
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="4.11"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6.73"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="3.61"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pause_layout"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="15.43"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1.83"
+            android:layout_gravity="center"
+            android:src="@drawable/pause"
+            android:adjustViewBounds="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="4.79"/>
+
+        <TextView
+            android:id="@+id/menu_restart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.90"
+            android:text="다시 시작"
+            android:textColor="#191e2d"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="1dp"
+            android:fontFamily="@font/gyeonggi_font"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2.05"/>
+
+        <TextView
+            android:id="@+id/menu_rank"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.90"
+            android:text="순위보기"
+            android:textColor="#191e2d"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="1dp"
+            android:fontFamily="@font/gyeonggi_font"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2.05"/>
+
+        <TextView
+            android:id="@+id/menu_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.90"
+            android:text="돌아가기"
+            android:textColor="#191e2d"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="1dp"
+            android:fontFamily="@font/gyeonggi_font"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="16.92"/>
+    </LinearLayout>
+</FrameLayout>
