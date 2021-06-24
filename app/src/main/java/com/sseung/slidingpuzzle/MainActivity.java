@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         check = new boolean[17];
         images = new int[17];
         list = new int[4][4];
-
+        //수정?
         time_text = findViewById(R.id.time_text);
 
         lookImage = findViewById(R.id.lookImage);
