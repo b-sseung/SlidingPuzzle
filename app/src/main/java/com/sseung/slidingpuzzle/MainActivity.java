@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     int[][] list;
 
     ImageView originImage, lookImage;
-    LinearLayout game_layout, pause_text, pause_layout;
+    LinearLayout game_layout, pause_text, pause_layout, under_menu;
     TextView menu_restart, menu_rank, menu_cancel;
     ImageView start_layout;
 
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     TimeCheck thread = new TimeCheck();
 
     int time = 0;
-    boolean value = true, anim_value = true;
+    boolean value = true, anim_value = true, clear_check = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         check = new boolean[17];
         images = new int[17];
         list = new int[4][4];
-        //수정?
+
         time_text = findViewById(R.id.time_text);
 
         lookImage = findViewById(R.id.lookImage);
@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
         menu_restart = findViewById(R.id.menu_restart);
         menu_rank = findViewById(R.id.menu_rank);
         menu_cancel = findViewById(R.id.menu_cancel);
+
+        under_menu = findViewById(R.id.under_menu);
 
         for (int i = 1; i < 17; i++){
             String num = (i < 10) ? "0" + i : Integer.toString(i);
@@ -85,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-//        testNumber();
-        randomNumber();
+        testNumber();
+//        randomNumber();
 
         for (int i = 0; i < 4; i++){
             Log.d("tlqkf", Arrays.toString(list[i]));
@@ -296,18 +298,20 @@ public class MainActivity extends AppCompatActivity {
         BroadcastReceiver receiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)){
-                    value = true;
-                    if(thread.isAlive()){
-                        thread.interrupt();
-                    }
+                if (!clear_check){
+                    if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)){
+                        value = true;
+                        if(thread.isAlive()){
+                            thread.interrupt();
+                        }
 
-                    thread = new TimeCheck();
-                    thread.start();
-                    Log.d("tlqkf", "리시버 on");
-                } else {
-                    value = false;
-                    Log.d("tlqkf", "리시버 off");
+                        thread = new TimeCheck();
+                        thread.start();
+                        Log.d("tlqkf", "리시버 on");
+                    } else {
+                        value = false;
+                        Log.d("tlqkf", "리시버 off");
+                    }
                 }
             }
         };
@@ -350,9 +354,42 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        if (!checkValue) value = false;
+        if (!checkValue) {
+            value = false;
+            clear_check = true;
+            clear();
+        }
 
         Log.d("tlqkf", "value : " + value);
+    }
+
+    public void clear(){
+        views[16].setImageResource(images[16]);
+
+        Animation in = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.image_in);
+        in.setDuration(1500);
+        in.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        views[16].startAnimation(in);
+    }
+
+    public void balloonAnimation(){
+
     }
 
     public void randomNumber(){

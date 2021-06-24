@@ -40,7 +40,7 @@ public class PublicFunction {
         PuzzleDatabase db = PuzzleDatabase.getInstance(context);
 
         String sql = "insert into " + PuzzleDatabase.TABLE1 +
-                "(name) values ("
+                "(nickname) values ("
                 + "'" + name + "')";
 
         Log.d("tlqkf", "sql : " + sql);

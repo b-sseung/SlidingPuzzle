@@ -9,18 +9,32 @@
 
     <ImageView
         android:id="@+id/start_layout"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/start_background"
         android:adjustViewBounds="true"
         android:clickable="true"/>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/balloon_image01"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/balloon01"
+            android:adjustViewBounds="true"/>
+
+    </FrameLayout>
+
     <LinearLayout
         android:id="@+id/game_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="invisible"
         android:clickable="true">
 
         <TextView
@@ -326,6 +340,7 @@
             android:layout_weight="1.89"/>
 
         <LinearLayout
+            android:id="@+id/under_menu"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="10.10">
