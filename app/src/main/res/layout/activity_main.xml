@@ -9,31 +9,19 @@
 
     <ImageView
         android:id="@+id/start_layout"
-        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/start_background"
         android:adjustViewBounds="true"
         android:clickable="true"/>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/balloon_image01"
-            android:visibility="invisible"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/balloon01"
-            android:adjustViewBounds="true"/>
-
-    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/game_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="invisible"
         android:orientation="vertical"
         android:clickable="true">
 
@@ -339,108 +327,146 @@
             android:layout_height="0dp"
             android:layout_weight="1.89"/>
 
-        <LinearLayout
-            android:id="@+id/under_menu"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="10.10">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.46"/>
-
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="9.01"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="0.73"
-                    android:text="▼ 크게 보기 ▼"
-                    android:autoSizeTextType="uniform"
-                    android:gravity="center"
-                    android:autoSizeMinTextSize="1dp"
-                    android:fontFamily="@font/gyeonggi_font"
-                    android:textColor="@color/black"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="0.35"/>
-
-                <ImageView
-                    android:id="@+id/lookImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="9.01"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/origin"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="17.96">
+                android:id="@+id/under_menu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="6.73"/>
+                    android:layout_weight="0.46"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="4.50"
+                    android:layout_weight="9.01"
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="4.11"/>
-
-                    <LinearLayout
-                        android:id="@+id/pause_text"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1.88"
+                        android:layout_weight="0.73"
+                        android:text="▼ 크게 보기 ▼"
+                        android:autoSizeTextType="uniform"
+                        android:gravity="center"
+                        android:autoSizeMinTextSize="1dp"
+                        android:fontFamily="@font/gyeonggi_font"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.35"/>
+
+                    <ImageView
+                        android:id="@+id/lookImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="9.01"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/origin"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="17.96">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6.73"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4.50"
                         android:orientation="vertical">
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="4.11"/>
+
+                        <LinearLayout
+                            android:id="@+id/pause_text"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_weight="0.40"/>
+                            android:layout_weight="1.88"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="0.40"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1.08"
+                                android:text="pause"
+                                android:fontFamily="@font/gyeonggi_font"
+                                android:textColor="@color/black"
+                                android:autoSizeTextType="uniform"
+                                android:autoSizeMinTextSize="1dp"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="0.40"/>
+                        </LinearLayout>
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="0dp"
-                            android:layout_weight="1.08"
-                            android:text="pause"
-                            android:fontFamily="@font/gyeonggi_font"
-                            android:textColor="@color/black"
-                            android:autoSizeTextType="uniform"
-                            android:autoSizeMinTextSize="1dp"
-                            android:gravity="center"/>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="0.40"/>
+                            android:layout_weight="4.11"/>
                     </LinearLayout>
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="4.11"/>
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6.73"/>
+
                 </LinearLayout>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="6.73"/>
-
             </LinearLayout>
-        </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/clear_under"
+                android:visibility="invisible"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.39"/>
+                <ImageView
+                    android:id="@+id/under_replay"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.52"
+                    android:src="@drawable/replay_text"
+                    android:adjustViewBounds="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="3.30"/>
+                <ImageView
+                    android:id="@+id/under_rank"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.62"
+                    android:src="@drawable/rank_text"
+                    android:adjustViewBounds="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="2.27"/>
+            </LinearLayout>
+        </FrameLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
@@ -525,4 +551,94 @@
             android:layout_height="0dp"
             android:layout_weight="16.92"/>
     </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/balloon_image01"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/balloon01"
+            android:adjustViewBounds="true"/>
+        <ImageView
+            android:id="@+id/balloon_image02"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/balloon02"
+            android:adjustViewBounds="true"/>
+        <ImageView
+            android:id="@+id/balloon_image03"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/balloon03"
+            android:adjustViewBounds="true"/>
+        <ImageView
+            android:id="@+id/balloon_image04"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/balloon04"
+            android:adjustViewBounds="true"/>
+        <ImageView
+            android:id="@+id/balloon_image05"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/balloon05"
+            android:adjustViewBounds="true"/>
+        <ImageView
+            android:id="@+id/balloon_image06"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/balloon06"
+            android:adjustViewBounds="true"/>
+        <ImageView
+            android:id="@+id/balloon_image07"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/balloon07"
+            android:adjustViewBounds="true"/>
+        <ImageView
+            android:id="@+id/balloon_image08"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/balloon08"
+            android:adjustViewBounds="true"/>
+        <ImageView
+            android:id="@+id/balloon_image09"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/balloon09"
+            android:adjustViewBounds="true"/>
+        <ImageView
+            android:id="@+id/balloon_image10"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/balloon10"
+            android:adjustViewBounds="true"/>
+        <ImageView
+            android:id="@+id/balloon_image11"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/balloon11"
+            android:adjustViewBounds="true"/>
+        <ImageView
+            android:id="@+id/balloon_image12"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/balloon12"
+            android:adjustViewBounds="true"/>
+    </FrameLayout>
 </FrameLayout>

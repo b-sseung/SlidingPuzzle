@@ -6,7 +6,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -23,15 +22,15 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView[] views;
+    ImageView[] views, balloonViews;
     int[] images;
     boolean[] check;
     int[][] list;
 
     ImageView originImage, lookImage;
-    LinearLayout game_layout, pause_text, pause_layout, under_menu;
+    LinearLayout game_layout, pause_text, pause_layout, under_menu, clear_under;
     TextView menu_restart, menu_rank, menu_cancel;
-    ImageView start_layout;
+    ImageView start_layout, under_replay, under_rank;
 
     TextView time_text;
 
@@ -47,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         views = new ImageView[17];
+        balloonViews = new ImageView[12];
         check = new boolean[17];
         images = new int[17];
         list = new int[4][4];
@@ -68,6 +68,10 @@ public class MainActivity extends AppCompatActivity {
         menu_cancel = findViewById(R.id.menu_cancel);
 
         under_menu = findViewById(R.id.under_menu);
+        clear_under = findViewById(R.id.clear_under);
+
+        under_replay = findViewById(R.id.under_replay);
+        under_rank = findViewById(R.id.under_rank);
 
         for (int i = 1; i < 17; i++){
             String num = (i < 10) ? "0" + i : Integer.toString(i);
@@ -85,6 +89,14 @@ public class MainActivity extends AppCompatActivity {
                     clickEvent(position);
                 }
             });
+        }
+
+        for (int i = 0; i < 12; i++){
+            String num = (i+1 < 10) ? "0" + (i+1) : Integer.toString(i+1);
+
+            int id = getResources().getIdentifier("balloon_image" + num, "id", getApplicationContext().getPackageName());
+
+            balloonViews[i] = (ImageView) findViewById(id);
         }
 
         testNumber();
@@ -292,6 +304,48 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        under_replay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clear_under.setVisibility(View.INVISIBLE);
+                under_menu.setVisibility(View.VISIBLE);
+
+                testNumber();
+//                randomNumber();
+
+                time = 0;
+
+                Animation out = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.image_out);
+                out.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        originImage.setVisibility(View.INVISIBLE);
+
+                        if(thread.isAlive()){
+                            thread.interrupt();
+                        }
+
+                        thread = new TimeCheck();
+                        thread.start();
+
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+
+                originImage.startAnimation(out);
+            }
+        });
+
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_ON);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
@@ -376,7 +430,27 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
+                Animation in2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.image_in);
+                in2.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
 
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        clear_under.setVisibility(View.VISIBLE);
+                        under_menu.setVisibility(View.INVISIBLE);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+                originImage.setVisibility(View.VISIBLE);
+                originImage.setImageResource(R.drawable.clear_image);
+                originImage.startAnimation(in2);
             }
 
             @Override
@@ -386,10 +460,63 @@ public class MainActivity extends AppCompatActivity {
         });
 
         views[16].startAnimation(in);
+
+        balloonAnimation1(0);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                balloonAnimation2(11);
+            }
+        }, 500);
+
     }
 
-    public void balloonAnimation(){
+    public void balloonAnimation1(int num){
+        Animation in = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.balloon_anim);
+        in.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
 
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                if (num < 11) {
+                    balloonAnimation1(num+1);
+                }
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        balloonViews[num].startAnimation(in);
+        Log.d("tlqkf", "balloon start : " + num);
+    }
+
+    public void balloonAnimation2(int num){
+        Animation in = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.balloon_anim);
+        in.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                if (num > 0) {
+                    balloonAnimation2(num-1);
+                }
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        balloonViews[num].startAnimation(in);
+        Log.d("tlqkf", "balloon start : " + num);
     }
 
     public void randomNumber(){
